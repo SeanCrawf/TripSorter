@@ -1,0 +1,5 @@
+<div class="ui-message-container">
+    <div class="alert alert-danger" ng-class="{ 'active': msgObj.life > 1000 }" ng-repeat="msgObj in messages">
+        {{ msgObj.message }}
+    </div>
+</div>

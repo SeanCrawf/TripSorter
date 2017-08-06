@@ -1,0 +1,19 @@
+<div ng-controller="Routes.TripFormController">
+    <div ng-form name="tripsorter">
+        <div dropdown name="from" placeholder="From" store-key="cities" model="model.from"></div>
+        <div dropdown name="to" placeholder="To" store-key="cities" model="model.to"></div>
+        <div class="form-group">
+            <div class="btn-group btn-group-justified">
+                <div
+                    class="btn btn-default"
+                    ng-repeat="(key, searchType) in searchTypes"
+                    ng-class="{ 'btn-info': currentSearchType === key }"
+                    ng-click="controller.setSearchType(key)"
+                >{{ key }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success btn-block" ng-click="controller.searchRoute()"><i class="glyphicon glyphicon-search"></i> Search</button>
+        </div>
+    </div>
+</div>

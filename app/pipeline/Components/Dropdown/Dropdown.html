@@ -1,0 +1,6 @@
+<div class="form-group">
+    <select class="form-control" name="{{ name }}" ng-model="model" ng-change="controller.storeValue()">
+        <option value="" hidden>{{ options.length > 0 ? placeholder : 'Loading...' }}</option>
+        <option value="{{ option }}" ng-repeat="option in options">{{ option }}</option>
+    </select>
+</div>

@@ -1,0 +1,41 @@
+
+<div ng-controller="Routes.TripFormResultsController">
+
+    <div class="bg-info v-margin" ng-repeat="deal in deals">
+        <div class="col-xs-12 col-spacing">
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        <div class="margin-bottom">{{ deal.departure }} <i class="glyphicon glyphicon-chevron-right"></i> {{ deal.arrival }}</div>
+                        <div class="margin-bottom"><span class="label label-default">{{ deal.transport }}</span> <small>{{ deal.reference }} for {{ deal.duration.h }}hrs {{ deal.duration.m }}mins</small></div>
+                    </td>
+                    <td class="text-right">
+                        <div>
+                            <span class="h4 no-margin"><strong>&euro;{{ deal.costAfterDiscount }}</strong>
+                        </div>
+                        <div ng-show="deal.cost > deal.costAfterDiscount">
+                            <small class="text-danger"><s>&euro;{{ deal.cost }}</s></small></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="bg-primary v-margin margin-bottom-lg">
+        <div class="col-xs-12 col-spacing text-center">
+            <table style="width: 100%;">
+                <tr>
+                    <td class="text-left">Total</td>
+                    <td class="text-center">{{ duration.h }}hrs {{ duration.m }}mins</td>
+                    <td class="text-right h3"><strong>&euro; {{ total }}</strong></td>
+                </tr>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-block" ng-click="controller.reset()"><i class="glyphicon glyphicon-retweet"></i> Reset</button>
+    </div>
+</div>
